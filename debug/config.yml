@@ -1,0 +1,4 @@
+---
+logging:
+  level: DEBUG
+  file: env.DEBUG_DIR/output/debug.log
