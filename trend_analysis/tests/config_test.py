@@ -55,8 +55,8 @@ def test_load_failed():
         cfg = config.get_config()
 
 
-@cfg_setup("value: $ENV('env')_concat", {'env': 'test_value'})
+@cfg_setup("value: prefix_$ENV('env')_suffix", {'env': 'test_value'})
 def test_env_var_substitution():
     """Test string substitutions"""
     cfg = config.get_config()
-    assert cfg['value'] == 'test_value_concat'
+    assert cfg['value'] == 'prefix_test_value_suffix'
