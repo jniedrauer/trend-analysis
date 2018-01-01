@@ -10,11 +10,18 @@ with Linux or MacOS.
 
 Use:
 
-```bash
-./bootstrap.sh
-workon technical-analysis
-```
+    ./bootstrap.sh::
+    workon technical-analysis
+
+Testing
+-------
+Tests should be run with tox. Install tox using your distro's package manager
+or using pip. Run tests with:
+
+    tox::
 
 Debugging
 ---------
-You can run the application in debug mode using the helper script `debug.sh`.
+You can run the application in debug mode using the helper script:
+
+    debug.sh::
