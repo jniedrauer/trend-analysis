@@ -4,5 +4,6 @@
 
 
 pip install --editable .
+test -d debug/output || mkdir -p debug/output
 
 trend-analysis

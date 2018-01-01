@@ -1,4 +1,4 @@
 ---
 logging:
   level: DEBUG
-  file: env.DEBUG_DIR/output/debug.log
+  file: $ENV('DEBUG_DIR')/output/debug.log

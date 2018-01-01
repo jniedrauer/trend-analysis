@@ -2,13 +2,12 @@
 
 
 import logging
+from logging.handlers import RotatingFileHandler
 
 
 def init_logging(cfg):
     """Initialize logging with configuration"""
     # File logger
-    log_path = cfg['logging']['file']
-
     logging.getLogger().setLevel(logging.DEBUG) # Set root logger base level
     log_format = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
     log_file = RotatingFileHandler(
@@ -21,7 +20,7 @@ def init_logging(cfg):
     logging.getLogger().addHandler(log_file)
 
     # Console logger
-    log_console = StreamHandler()
+    log_console = logging.StreamHandler()
     log_console.setFormatter(logging.Formatter('%(message)s'))
-    log_console.setLevel(log_level_to_constant(kwargs.get('loglevel')))
+    log_console.setLevel(cfg['logging']['level'])
     logging.getLogger().addHandler(log_console)
